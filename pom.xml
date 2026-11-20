@@ -9,8 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.vini</groupId>
-    <artifactId>Order-Processing-Systen</artifactId>
+    <artifactId>Order-Processing-System</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>Order-Processing-Systen</name>
     <description>Order-Processing-Systen</description>
     <url/>
@@ -20,6 +21,9 @@
     <developers>
         <developer/>
     </developers>
+    <modules>
+        <module>core-shared</module>
+    </modules>
     <scm>
         <connection/>
         <developerConnection/>
