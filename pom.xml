@@ -23,6 +23,8 @@
     </developers>
     <modules>
         <module>core-shared</module>
+        <module>order</module>
+        <module>notification</module>
     </modules>
     <scm>
         <connection/>

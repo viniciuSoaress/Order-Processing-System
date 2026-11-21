@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:17-alpine
+    container_name: db_processing_notification
+    environment:
+      POSTGRES_DB: processing_notification
+      POSTGRES_USER: processing_notification_user
+      POSTGRES_PASSWORD: processing_notification_ps
+    ports:
+      - "5655:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - notification-network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U processing_notification_user -d processing_notification_ps" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  notification-network:
+    external: true
+    name: order-processing-network
